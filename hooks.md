@@ -134,4 +134,61 @@ function MyComponent() {
 }
 ```
 
+8. **useImperativeHandle**: This hook customizes the instance value that is exposed to parent components when using `ref`. In other words, it allows parent components to call methods on child components.
+
+```javascript
+import React, { useRef, useImperativeHandle, forwardRef } from 'react';
+
+const FancyInput = forwardRef((props, ref) => {
+  useImperativeHandle(ref, () => ({
+    focus: () => {
+      // ...
+    }
+  }));
+  return <input />;
+});
+
+// Usage
+const ref = useRef();
+<FancyInput ref={ref} />;
+// Now you can call `ref.current.focus()`
+```
+
+9. **useLayoutEffect**: This hook is identical to `useEffect`, but it fires synchronously after all DOM mutations. Use this to read layout from the DOM and synchronously re-render. Updates scheduled inside `useLayoutEffect` will be flushed synchronously, before the browser has a chance to paint.
+
+```javascript
+import React, { useLayoutEffect } from 'react';
+
+function MyComponent() {
+  useLayoutEffect(() => {
+    // Your code here
+  });
+  return <div />;
+}
+```
+
+10. **useDebugValue**: This hook can be used to display a label for custom hooks in React DevTools.
+
+```javascript
+import React, { useState, useDebugValue } from 'react';
+
+function useFriendStatus(friendID) {
+  const [isOnline, setIsOnline] = useState(null);
+
+  // Show a label in DevTools next to this Hook
+  // e.g. "FriendStatus: Online"
+  useDebugValue(isOnline ? 'Online' : 'Offline');
+
+  // Rest of the hook code
+}
+
+function FriendStatus(props) {
+  const isOnline = useFriendStatus(props.friend.id);
+  if (isOnline === null) {
+    return 'Loading...';
+  }
+  return isOnline ? 'Online' : 'Offline';
+}
+```
+
 Remember, hooks are a new addition in React 16.8. They let you use state and other React features without writing a class. Happy coding! 🚀

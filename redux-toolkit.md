@@ -62,6 +62,6 @@ In this example, `customMiddleware` is a custom middleware function. It follows 
 
 If you want to include the default middleware as well as your custom middleware, you can use `getDefaultMiddleware` to get an array of the default middleware, and then spread that array into the `middleware` option for `configureStore`¹²⁴.
 
-Remember, middleware in Redux is a way to enhance the dispatch function with custom logic. It's often used for dealing with asynchronous actions³. Happy coding! 🚀
+Remember, middleware in Redux is a way to enhance the dispatch function with custom logic. It's often used for dealing with asynchronous actions³. 
 
 Happy coding! 🚀

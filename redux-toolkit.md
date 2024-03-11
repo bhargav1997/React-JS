@@ -37,4 +37,31 @@ For more in-depth tutorials and explanations, you can refer to the following res
 
 Remember, while Redux Toolkit simplifies many aspects of using Redux, it's still important to understand the core concepts of Redux. 
 
+In Redux Toolkit, you can use custom middleware by providing it to the `configureStore` function. Here's an example of how you can add a custom middleware:
+
+```javascript
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import logger from 'redux-logger';
+import rootReducer from './reducer';
+
+// Define your custom middleware
+const customMiddleware = storeAPI => next => action => {
+  // Your custom logic goes here
+  return next(action);
+};
+
+const middleware = [...getDefaultMiddleware(), customMiddleware, logger];
+
+const store = configureStore({
+  reducer: rootReducer,
+  middleware,
+});
+```
+
+In this example, `customMiddleware` is a custom middleware function. It follows the standard Redux middleware signature of `(storeAPI) => (next) => (action) => {}`. You can put your custom logic inside this function⁵.
+
+If you want to include the default middleware as well as your custom middleware, you can use `getDefaultMiddleware` to get an array of the default middleware, and then spread that array into the `middleware` option for `configureStore`¹²⁴.
+
+Remember, middleware in Redux is a way to enhance the dispatch function with custom logic. It's often used for dealing with asynchronous actions³. Happy coding! 🚀
+
 Happy coding! 🚀

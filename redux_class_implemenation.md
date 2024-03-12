@@ -95,9 +95,7 @@ function App() {
 export default App;
 ```
 
-**Step 6: Creating
-
-Components**
+**Step 6: Creating Components**
 
 Now, let's create a component called `Counter.js` where we'll interact with Redux store:
 

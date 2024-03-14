@@ -55,4 +55,9 @@ Web accessibility is crucial for making the web usable by everyone. Here are som
     ```
 
 Remember, accessibility is not just a set of rules to follow. 
-It's about ensuring an inclusive and equal experience for all users. I hope this helps! Let me know if you have any other questions.
+It's about ensuring an inclusive and equal experience for all users. 
+
+[Web Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/)
+
+
+

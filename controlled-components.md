@@ -1,4 +1,4 @@
-In React, a controlled component is a component where React is in control of the values of input elements and form submissions. 
+In React, a Controlled Component is a component that manages form data via its own state. It receives values through props and updates them through callbacks like onChange. 
 
 Here's an example of a controlled component:
 

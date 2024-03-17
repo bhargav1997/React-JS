@@ -1,4 +1,4 @@
-Integrating React DnD into your React project allows you to add drag-and-drop functionality with ease. Here's a step-by-step guide to help you get started:
+## Integrating React DnD into your React project allows you to add drag-and-drop functionality with ease. Here's a step-by-step guide to help you get started:
 
 1. **Installation**
    First, you need to install React DnD and its HTML5 backend. Run the following command in your terminal:

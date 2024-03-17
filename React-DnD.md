@@ -66,3 +66,23 @@ export default DropTarget('CARD', cardTarget, (connect) => ({
 This example shows a simple card component that can be dragged and dropped. The `beginDrag` method in the drag source specifies what data is being dragged, and the `drop` method in the drop target specifies what happens when an item is dropped.
 
 For a more detailed explanation and real-world examples, you can refer to the comprehensive guides and tutorials available online¹². Additionally, exploring example projects on platforms like CodeSandbox can provide you with hands-on experience and inspiration⁴.
+
+## HTML5 backend
+
+The HTML5 backend for React DnD is an officially supported backend that allows you to implement drag-and-drop functionality using the HTML5 Drag and Drop API. It's designed to abstract away the complexities of the native browser drag-and-drop events, providing a consistent and cross-browser interface for your React components.
+
+Here's a breakdown of how the HTML5 backend works:
+
+1. **Drag Sources**: These are the components that can be dragged. The HTML5 backend allows you to define the data that represents the draggable item and how it should behave when being dragged.
+
+2. **Drop Targets**: These are the areas where the drag sources can be dropped. The backend manages the drop events and provides hooks to define how the dropped item should be handled.
+
+3. **Monitors**: The backend includes monitors that track the state of the drag-and-drop operation. They provide information about the current drag state, such as whether an item is being dragged, if it's over a drop target, or if it has been dropped.
+
+4. **Connectors**: These are functions that connect your components to the DnD backend. They allow your components to interact with the DnD system and change their appearance or behavior based on the drag state.
+
+5. **Browser Support**: The HTML5 backend strives to support evergreen browsers, but it's important to test your app on the browsers you're targeting due to potential inconsistencies or bugs.
+
+The HTML5 backend is a powerful tool that simplifies the implementation of complex drag-and-drop interactions in your React applications. It handles the underlying events and updates your components based on the drag-and-drop state, allowing you to focus on building a great user experience¹².
+
+For a more comprehensive understanding, you can refer to the official documentation or explore detailed guides that explain the integration and usage of the HTML5 backend in React DnD projects¹².

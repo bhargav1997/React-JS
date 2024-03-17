@@ -53,3 +53,44 @@ In this example:
 
 This is a basic example, but Styled Components allows for much more complex styling, dynamic properties based on props, theming, and more. 
 It's a powerful tool for styling in modern React applications.
+
+## Do I use onclick function in style components?
+
+Yes, you can definitely use `onClick` and other event handlers in Styled Components, just like you would with any other React component. Here's how you can integrate an `onClick` event handler in a styled component:
+
+```jsx
+import styled from 'styled-components';
+
+const StyledButton = styled.button`
+  /* Your styles here */
+`;
+
+function App() {
+  const handleClick = () => {
+    console.log('Button clicked!');
+  };
+
+  return <StyledButton onClick={handleClick}>Click me</StyledButton>;
+}
+```
+
+For dynamic styling, Styled Components allows you to pass props and adjust styles based on those props. Here's an example of how you can change the background color of a button dynamically based on a prop:
+
+```jsx
+const DynamicStyledButton = styled.button`
+  background-color: ${props => props.primary ? 'navy' : 'white'};
+  color: ${props => props.primary ? 'white' : 'navy'};
+  /* Other styles */
+`;
+
+function App() {
+  return (
+    <>
+      <DynamicStyledButton primary>Primary Button</DynamicStyledButton>
+      <DynamicStyledButton>Default Button</DynamicStyledButton>
+    </>
+  );
+}
+```
+
+In this example, the `DynamicStyledButton` will have a navy background and white text if the `primary` prop is true, and a white background with navy text otherwise. This approach can be extended to any CSS property to create highly dynamic and reusable styled components.
